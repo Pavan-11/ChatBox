@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import AuthForm from './Authentication/AuthForm';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 import './App.css';
-
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Profile from './profile/profile';
 function App() {
+
+
+  const isAuth = useSelector(state => state.auth.isLoggedIn);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+        <Route path='/auth' component={AuthForm} />
+        <Route path='/profile'>
+          {isAuth ? <Profile /> : <Redirect to='/auth' />}
+        </Route>
+
+        <Redirect from='/' to='/auth' />
+    </Switch>
   );
 }
 
