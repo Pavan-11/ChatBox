@@ -1,5 +1,5 @@
-import {Button} from 'react-bootstrap';
-import { useDispatch} from 'react-redux';
+import { Button } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { authActions } from '../store/authReducer';
 
 const Profile = () => {
@@ -7,8 +7,11 @@ const Profile = () => {
 
     return (
         <>
-        <h1>WELCOME</h1>
-        <Button variant="danger" onClick={() => dispatch(authActions.logout())}>Logout</Button>
+            <div className="container">
+                <h1>WELCOME TO MailBox Client</h1>
+                <Button variant="danger" onClick={() => dispatch(authActions.logout())}>Logout</Button>
+            </div>
+            <hr></hr>
         </>
     )
 }
