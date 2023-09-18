@@ -2,6 +2,7 @@ import './profile.css';
 import NavBar from '../NavBar/NavBar';
 import { useDispatch } from 'react-redux';
 import { authActions } from '../store/authReducer';
+import ComposeMailForm from '../ComposeMail/ComposeMail';
 
 const Profile = () => {
     const dispatch = useDispatch();
@@ -14,6 +15,7 @@ const Profile = () => {
                 <button className='btn' onClick={() => dispatch(authActions.logout())}>Logout</button>
             </div>
             <hr></hr>
+            <ComposeMailForm />
         </>
     )
 }
