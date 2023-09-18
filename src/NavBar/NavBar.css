@@ -1,0 +1,22 @@
+.navbar{
+    width: 50%;
+}
+
+.navbar-ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.nav-item{
+    list-style: none;
+}
+.active{
+    color:#0174DF !important ;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: red;
+    font-weight: 900;
+    font-size: 20px;
+}

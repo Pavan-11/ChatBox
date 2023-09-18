@@ -1,4 +1,5 @@
-import { Button } from 'react-bootstrap';
+import './profile.css';
+import NavBar from '../NavBar/NavBar';
 import { useDispatch } from 'react-redux';
 import { authActions } from '../store/authReducer';
 
@@ -8,8 +9,9 @@ const Profile = () => {
     return (
         <>
             <div className="container">
-                <h1>WELCOME TO MailBox Client</h1>
-                <Button variant="danger" onClick={() => dispatch(authActions.logout())}>Logout</Button>
+                <h1 style={{color: 'blueviolet'}}>MailBox</h1>
+                <NavBar />
+                <button className='btn' onClick={() => dispatch(authActions.logout())}>Logout</button>
             </div>
             <hr></hr>
         </>
