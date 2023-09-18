@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { authActions } from '../store/authReducer';
-import {useHistory} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import { useState, useRef } from 'react';
-import {Form, Button, Container} from 'react-bootstrap';
+import {Form, Container} from 'react-bootstrap';
 import classes from './AuthForm.module.css';
+import LoaderEl from '../UI/Loader/Loader';
 
 
 
@@ -11,7 +12,7 @@ const AuthForm = () => {
     const emailInputRef = useRef();
     const passwordInputRef = useRef();
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
 
     // const authCtx = useContext(AuthContext)
@@ -67,7 +68,7 @@ const AuthForm = () => {
         }).then(data => {
             dispatch(authActions.login());
             console.log("this is data", data)
-            history.replace('/profile')
+            navigate('/profile')
         }).catch(err => {
             alert(err.message);
         })
@@ -75,7 +76,7 @@ const AuthForm = () => {
 
     return (
         <Container className={classes.auth}>
-            <Form onSubmit={submitHandler} >
+            <Form onSubmit={submitHandler} className={classes.form} >
 
                     <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
                     <Form.Group className={classes.control}>
@@ -96,7 +97,7 @@ const AuthForm = () => {
 
                 <div className={classes.actions}>
                     {!isLoading && <button>{isLogin ? 'Login' : 'Create Account'}</button>}
-                    {isLoading && <p>Sending Request...</p>}
+                    {isLoading && <LoaderEl />}
                     {!isLoggedIn && (<button
                         type='button'
                         className={classes.toggle}

@@ -10,6 +10,11 @@
     color: white;
 }
 
+/* .form{
+    position: relative;
+    left: 50px;
+} */
+
 .auth h1 {
     text-align: center;
     color: rgb(226, 16, 16);
