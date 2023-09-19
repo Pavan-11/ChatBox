@@ -16,7 +16,7 @@ const RenderMail = ({render}) => {
     console.log(render)
     const dispatch = useDispatch();
     let {receivedEmails, sentEmails} = useSelector((state) => state.fetchedData);
-    const [isHoverd, setIsHovered] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
 
     console.log(sentEmails)
