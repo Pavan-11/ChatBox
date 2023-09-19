@@ -24,17 +24,19 @@ h3 {
 }
 
 h4 {
-    background: linear-gradient(to left, #743ad5, #d53a9d);
+    background: linear-gradient(to left, black, black);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-weight: 600;
     opacity: 0.8;
+    
 }
 
 main {
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
-    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+    background: linear-gradient(to right top, #ffffff,
+        #b2b2b2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,8 +47,8 @@ main {
     min-height: 80vh;
     width: 90%;
     background: linear-gradient(to right bottom,
-            rgba(255, 255, 255, 0.6),
-            rgba(255, 255, 255, 0.3));
+            #ffbf12,
+            rgba(15 20 26 / 70%));
     border-radius: 1.7rem;
     z-index: 5;
     backdrop-filter: blur(1.5rem);
@@ -206,6 +208,7 @@ main {
     margin-left: 3rem;
     white-space: nowrap;
     overflow: visible;
+    color: red;
 }
 
 /* .progress {

@@ -3,7 +3,7 @@ import React from "react";
 import './ComposeMail.css';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import { convertFromRaw, EditorState } from 'draft-js';
+import { convertToRaw, EditorState } from 'draft-js';
 import { postEmail } from "../store/fetchEmailSlice";
 import { useDispatch } from 'react-redux';
 
@@ -26,11 +26,18 @@ const ComposeMailForm = () => {
             receiverMail: toMailRef.current.value,
             subject: subjectMailRef.current.value,
             senderName: nameRef.current.value,
-            body: convertFromRaw(editorState.getCurrentContent()).blocks[0].text,
+            body: convertToRaw(editorState.getCurrentContent()).blocks[0].text,
             isRead: false,
             senderEmail: email
         };
         dispatch(postEmail(mailBody));
+        alert('Message Sent Successfully');
+
+        toMailRef.current.value = null;
+        subjectMailRef.current.value = null;
+        nameRef.current.value = null;
+
+        setEditorState(EditorState.createEmpty());
     };
     return (
         <>

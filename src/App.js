@@ -1,21 +1,33 @@
 import AuthForm from './Authentication/AuthForm';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import './App.css';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import Profile from './profile/profile';
+import { Route, Routes } from 'react-router-dom';
+import ViewMail from './RenderMail/ViewMail';
+import RenderMail from './RenderMail/RenderMail';
+import ComposeMailForm from './ComposeMail/ComposeMail';
+import NavBar from './NavBar/NavBar';
+import PrivateComponent from './NavBar/PrivateComponent';
+
 function App() {
 
 
   const isAuth = useSelector(state => state.auth.isLoggedIn);
   return (
-    <Switch>
-        <Route path='/auth' component={AuthForm} />
-        <Route path='/profile'>
-          {isAuth ? <Profile /> : <Redirect to='/auth' />}
-        </Route>
+    <>
+      <NavBar />
+      <Routes>
+        {/* <Route element={<PrivateComponent />}> */}
 
-        <Redirect from='/' to='/auth' />
-    </Switch>
+          <Route exact path='/auth' element={<AuthForm />} />
+          <Route exact path='/viewemail/:id/:render' element={<ViewMail />} />
+          <Route exact path='/' element={<RenderMail render={'inbox'} />} />
+          <Route exact path='/sent' element={<RenderMail render={'sent'} />} />
+          <Route exact path='/composeemail' element={<ComposeMailForm />} />
+          {/* <Route exact path='/*' element={<AuthForm />} /> */}
+        {/* </Route> */}
+      </Routes>
+    </>
+
   );
 }
 
