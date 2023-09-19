@@ -7,7 +7,7 @@ import {updateIsReadToTrue} from '../store/fetchEmailSlice';
 
 const ViewMail = () => {
     const {id, render} = useParams();
-    const {singleObj} = useSelector((state) => state.fetchData);
+    const {singleObj} = useSelector((state) => state.fetchedData);
     const dispatch = useDispatch();
 
 

@@ -12,7 +12,7 @@ import {Link} from 'react-router-dom';
 import {deleteEmail, getSentEmails} from '../store/fetchEmailSlice';
 
 
-const RenderMail = ({render}) => {
+function RenderMail({ render }) {
     console.log(render)
     const dispatch = useDispatch();
     let {receivedEmails, sentEmails} = useSelector((state) => state.fetchedData);
