@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/ChatBox/static/css/main.3634bf05.css",
+    "main.js": "/ChatBox/static/js/main.d02a40d5.js",
+    "static/js/787.2b8a1820.chunk.js": "/ChatBox/static/js/787.2b8a1820.chunk.js",
+    "static/media/dustbin.png": "/ChatBox/static/media/dustbin.6d93b0b9d834f1bfc69a.png",
+    "static/media/loader.gif": "/ChatBox/static/media/loader.e98d635acbba1049d137.gif",
+    "index.html": "/ChatBox/index.html",
+    "main.3634bf05.css.map": "/ChatBox/static/css/main.3634bf05.css.map",
+    "main.d02a40d5.js.map": "/ChatBox/static/js/main.d02a40d5.js.map",
+    "787.2b8a1820.chunk.js.map": "/ChatBox/static/js/787.2b8a1820.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3634bf05.css",
+    "static/js/main.d02a40d5.js"
+  ]
+}
